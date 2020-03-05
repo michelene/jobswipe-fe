@@ -1,0 +1,8 @@
+{
+  "short_name": "jobswipe",
+  "name": "jobswipe - A Job Posting Management Tool for Job Seekers",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
