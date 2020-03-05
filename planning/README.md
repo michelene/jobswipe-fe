@@ -10,3 +10,5 @@
 
 - [SignIn](https://github.com/mui-org/material-ui/tree/master/docs/src/pages/getting-started/templates/sign-in)
 - [SignUp](https://github.com/mui-org/material-ui/tree/master/docs/src/pages/getting-started/templates/sign-up)
+
+- [Material Icons](https://material-ui.com/components/material-icons/)

@@ -13,7 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Copyright from './Copyright';
-import { APIURL } from '../config';
+// import { APIURL } from '../config';
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -99,7 +99,7 @@ export default function SignUp() {
             <Grid item xs={12}>
               <FormControlLabel
                 control={<Checkbox value='allowExtraEmails' color='primary' />}
-                label='I want to receive inspiration, marketing promotions and updates via email.'
+                label='I want to receive notification of new job listings via email.'
               />
             </Grid>
           </Grid>
