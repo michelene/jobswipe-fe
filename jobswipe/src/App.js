@@ -1,10 +1,17 @@
 import React from 'react';
 import './App.css';
+import SignUp from './components/SignUp';
+import SignIn from './components/SignIn';
+import StickyFooter from './components/StickyFooter';
 
 function App() {
   return (
     <div className='App'>
-      <header className='App-header'></header>
+      <main>
+        <SignUp />
+        <SignIn />
+        <StickyFooter />
+      </main>
     </div>
   );
 }
