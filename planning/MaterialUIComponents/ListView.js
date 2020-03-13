@@ -9,7 +9,7 @@ const ListView = props => {
 
   useEffect(() => {
     const url = `${APIURL}/jobs`;
-    fetch(url)
+    fetch(url, { mode: 'cors' })
       .then(response => response.json())
       .then(jobs => {
         setListView(jobs);

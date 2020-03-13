@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 function JobContainer({ match }) {
   useEffect(() => {
     const url = `${APIURL}/jobs/${match.params.id}`;
-    fetch(url)
+    fetch(url, { mode: 'cors' })
       .then(response => response.json())
       .then(setJob)
       .catch(error => {
@@ -20,6 +20,7 @@ function JobContainer({ match }) {
     const url = `${APIURL}/users/${userid}/save/${match.params.id}`;
     fetch(url, {
       method: 'PUT',
+      mode: 'cors',
       headers: {
         'content-type': 'application/json; charset=UTF-8'
       }
@@ -30,6 +31,7 @@ function JobContainer({ match }) {
     const url = `${APIURL}/users/${userid}/discard/${match.params.id}`;
     fetch(url, {
       method: 'PUT',
+      mode: 'cors',
       headers: {
         'content-type': 'application/json; charset=UTF-8'
       }

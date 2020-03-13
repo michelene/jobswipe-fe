@@ -9,7 +9,7 @@ const Jobs = props => {
 
   let getJobs = () => {
     const url = `${APIURL}/getghjobs`;
-    fetch(url)
+    fetch(url, { mode: 'cors' })
       .then(res => res.json())
       .then(res => {
         let this_is_json = JSON.parse(res);

@@ -10,7 +10,7 @@ const SavedJobs = props => {
   useEffect(() => {
     // const url = `${APIURL}/users/saved/:userID`;
     const url = `${APIURL}/jobs`;
-    fetch(url)
+    fetch(url, { mode: 'cors' })
       .then(response => response.json())
       .then(savedjobs => {
         setSavedJobs(savedjobs);
@@ -36,7 +36,7 @@ const SavedJobs = props => {
   return (
     <ul>
       {savedjobs.map(job => (
-        <li className="JobLists" key={job._id}>
+        <li className='JobLists' key={job._id}>
           <Link to={`jobs/${job._id}`}>
             <Route
               exact
