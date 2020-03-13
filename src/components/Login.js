@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
-import logoImg from '../assets/jobswipe.jpg';
-import { Card, Logo, Form, Input, Button, Error } from '../components/AuthForm';
+import { Card, Form, Input, Button, Error } from '../components/AuthForm';
 import { useAuth } from '../context/auth';
 import { APIURL } from '../config.js';
 
@@ -44,7 +43,6 @@ function Login(props) {
 
   return (
     <Card>
-      <Logo src={logoImg} />
       <Form>
         <Input
           type='username'
