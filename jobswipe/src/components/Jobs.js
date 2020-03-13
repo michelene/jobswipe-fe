@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Route } from 'react-router-dom';
-import axios from 'axios';
 import { APIURL } from '../config';
 import JobContainer from './JobContainer';
 
