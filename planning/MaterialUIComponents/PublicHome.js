@@ -1,10 +1,12 @@
 import React from 'react';
+// import background from '../assets/jobswipe.jpg';
+import background from '../assets/newjob.jpg';
 
 function PublicHome() {
   return (
     <>
       <div>
-        <h1>PublicHome</h1>
+        <img src={background} />
       </div>
     </>
   );
