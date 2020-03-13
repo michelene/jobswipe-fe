@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import { APIURL } from '../config';
 import Button from '@material-ui/core/Button';
 
 function JobContainer({ match }) {
+  const [job, setJob] = useState(null);
+  // Hard code for now. TODO: Figure out how to share this globally after login
+  const [userid, setUserID] = useState();
+  const [error, setError] = useState(false);
+
   useEffect(() => {
     const url = `${APIURL}/jobs/${match.params.id}`;
     fetch(url)
@@ -11,7 +16,6 @@ function JobContainer({ match }) {
       .then(setJob)
       .catch(error => {
         console.log(error);
-        setError(true);
       });
   }, []);
 

@@ -1,22 +1,34 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
+
 import './App.css';
+import { AuthContext } from './context/auth';
+import PrivateRoute from './PrivateRoute';
+import Home from './components/Home';
+import Admin from './components/Admin';
+import Login from './components/Login';
+import SignUp from './components/SignUp';
+import Jobs from './components/Jobs';
 
-function App() {
+const App = props => {
+  const [authTokens, setAuthTokens] = useState();
+
+  const setTokens = data => {
+    localStorage.setItem('tokens', JSON.stringify(data));
+    setAuthTokens(data);
+  };
+
   return (
-    <>
-      <StaticAppBar />
-      <main>
-        <Switch>
-          <Route exact path='/signup' component={SignUp} />>
-          <Route exact path='/signin' component={SignIn} />>
-          {/* <AuthenticatedRoute path='/authhome' component={Dashboard} /> */}
-          <Route path='/authhome' component={Dashboard} />
-          <Route path='/publichome' component={PublicHome} />
-        </Switch>
-      </main>
-    </>
+    <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
+      <div>
+        <ul>...</ul>
+        <Route exact path='/' component={Home} />
+        <Route path='/login' component={Login} />
+        <Route path='/signup' component={SignUp} />
+        <Route path='/admin' component={Admin} />
+        <Route path='/newjobs' component={Jobs} />
+      </div>
+    </AuthContext.Provider>
   );
-}
-
+};
 export default App;
